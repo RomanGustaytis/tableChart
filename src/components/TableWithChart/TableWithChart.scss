@@ -1,0 +1,54 @@
+$color-background: #F5F5F5;
+$color-blue: #EDF8FF;
+$color-grey: #F5F5F5;
+$color-success: #ECF7E7;
+$color-warning: #FEE6E6;
+$color-positive: #85B17F;
+$color-negative: #FE4248;
+$border-color: #fff;
+
+.table-chart {
+  tbody {
+    tr:not(.chart-row) {
+      cursor: pointer;
+
+      td {
+        background-color: $color-background;
+
+        &.blue {
+          background-color: $color-blue;
+        }
+        &.grey {
+          background-color: $color-grey;
+        }
+        &.positive {
+          background-color: $color-success;
+
+          .tax {
+            color: $color-positive;
+          }
+        }
+        &.negative {
+          background-color: $color-warning;
+
+          .tax {
+            color: $color-negative;
+          }
+        }
+      }
+    }
+  }
+
+  th, td {
+    border: 3px solid $border-color !important;
+    padding: 0.5rem 1rem;
+  }
+
+  .tax {
+    margin-left: 1rem;
+  }
+
+  .chart-row td {
+    height: 20rem;
+  }
+}
