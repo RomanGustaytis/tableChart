@@ -7,16 +7,16 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const dataRows = [
-    { id: 1, label: "Выручка, руб", values: [12, 19, 6, 5, 2, 3, 33], today: "500 521", yesterday: "480 521", week: "480 521", tax: 4 },
-    { id: 2, label: "Наличные", values: [10, 15, 8, 33, 7, 9, 43], today: "300 000", yesterday: "300 000", week: "300 000", tax: 0 },
-    { id: 3, label: "Безналичный расчет", values: [10, 15, 8, 24, 7, 9, 53], today: "100 000", yesterday: "100 000", week: "100 000", tax: 0 },
-    { id: 4, label: "Кредитные карты", values: [10, 15, 8, 35, 7, 9, 39], today: "100 521", yesterday: "100 521", week: "100 521", tax: 0 },
-    { id: 5, label: "Средний чек руб.", values: [10, 15, 8, 51, 7, 9, 42], today: "1 300", yesterday: "900", week: "900", tax: 44 },
-    { id: 6, label: "Средний гость руб.", values: [10, 15, 8, 18, 7, 19, 34], today: "1200", yesterday: "800", week: "800", tax: 50 },
-    { id: 7, label: "Удаление из чека (после оплаты) руб.", values: [10, 15, 8, 22, 7, 9, 37], today: "1000", yesterday: "1100", week: "900", tax: -9 },
-    { id: 8, label: "Удаление до чека (после оплаты) руб.", values: [10, 15, 8, 36, 7, 9, 44], today: "1300", yesterday: "1300", week: "900", tax: 0 },
-    { id: 9, label: "Количество чеков", values: [10, 15, 8, 25, 7, 9, 34], today: "34", yesterday: "36", week: "34", tax: -6 },
-    { id: 10, label: "Количество гостей", values: [10, 15, 8, 12, 7, 9, 64], today: "34", yesterday: "36", week: "32", tax: -6 },
+    { id: 1, label: "Выручка, руб", values: [480521, 500521, 480521], today: "500 521", yesterday: "480 521", week: "480 521", tax: 4 },
+    { id: 2, label: "Наличные", values: [300000, 300000, 300000], today: "300 000", yesterday: "300 000", week: "300 000", tax: 0 },
+    { id: 3, label: "Безналичный расчет", values: [100000, 100000, 100000], today: "100 000", yesterday: "100 000", week: "100 000", tax: 0 },
+    { id: 4, label: "Кредитные карты", values: [100521, 100521, 100521], today: "100 521", yesterday: "100 521", week: "100 521", tax: 0 },
+    { id: 5, label: "Средний чек руб.", values: [900, 1300, 900], today: "1 300", yesterday: "900", week: "900", tax: 44 },
+    { id: 6, label: "Средний гость руб.", values: [800, 1200, 800], today: "1200", yesterday: "800", week: "800", tax: 50 },
+    { id: 7, label: "Удаление из чека (после оплаты) руб.", values: [1100, 1000, 900], today: "1000", yesterday: "1100", week: "900", tax: -9 },
+    { id: 8, label: "Удаление до чека (после оплаты) руб.", values: [1300, 1300, 900], today: "1300", yesterday: "1300", week: "900", tax: 0 },
+    { id: 9, label: "Количество чеков", values: [36, 34, 34], today: "34", yesterday: "36", week: "34", tax: -6 },
+    { id: 10, label: "Количество гостей", values: [36, 34, 32], today: "34", yesterday: "36", week: "32", tax: -6 },
 ];
 
 const TableWithChart = () => {
@@ -47,7 +47,7 @@ const TableWithChart = () => {
                                 <td colSpan="4">
                                     <Line
                                         data={{
-                                            labels: ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
+                                            labels: ["Вчера", "Текущий день", "Этот день недели"],
                                             datasets: [
                                                 {
                                                     label: selectedData.label,
